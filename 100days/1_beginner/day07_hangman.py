@@ -1,33 +1,96 @@
-#Step 2
-
 import random
-word_list = ["aardvark", "baboon", "camel"]
-chosen_word = random.choice(word_list)
 
-#Testing code
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+word_list = ["seoyoon", "dongsin", "seula", "heeseung", "yumi"]
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+
 print(f'Pssst, the solution is {chosen_word}.')
 
-#TODO-1: - Create an empty List called display.
-#For each letter in the chosen_word, add a "_" to 'display'.
-#So if the chosen_word was "apple", display should be ["_", "_", "_", "_", "_"] with 5 "_" representing each letter to guess.
-display = list()
+display = []
+for _ in range(word_length):
+    display += "_"
 
-for new in range(len(chosen_word)):
-    display.append('_')
-print(display)
-guess = input("Guess a letter: ").lower()
 
-#TODO-2: - Loop through each position in the chosen_word;
-#If the letter at that position matches 'guess' then reveal that letter in the display at that position.
-#e.g. If the user guessed "p" and the chosen word was "apple", then display should be ["_", "p", "p", "_", "_"].
-for letter in chosen_word:
-  for i in range(len(chosen_word)-1):
-    if guess == chosen_word[i]:
-      display[i] = guess      
-    else :
-      display[i] ='_'
 
-#TODO-3: - Print 'display' and you should see the guessed letter in the correct position and every other letter replace with "_".
-#Hint - Don't worry about getting the user to guess the next letter. We'll tackle that in step 3.
 
-print(display)
+
+
+
+
+# for game in range(7):
+#   guess = input("Guess a letter: ").lower()
+#   for letter in chosen_word:
+#     for i in range(len(chosen_word)):
+#       if guess == chosen_word[i]:
+#         display[i] = guess
+#     cut = 0
+#   if guess not in display :
+#     cut += 1
+#     print(stages[cut])
+#     # if 
+#   print(display)
+#   # print(stages[hangman])
+
+#   if ''.join(display) == chosen_word:
+#     print('You win!!!\n')
+#     break
+
+# print('You lose..\n')
