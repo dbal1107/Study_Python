@@ -11,7 +11,7 @@
 <summary>day04_RSP</summary>
 <div markdown="1">
 
-<img src='./data/day04_RSP.png' width='500'>
+<img src='./data/04_RSP.png' width='500'>
 
 </div>
 </details>
