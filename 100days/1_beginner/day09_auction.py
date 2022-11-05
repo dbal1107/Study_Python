@@ -1,6 +1,5 @@
 from replit import clear
-add = clear()
-
+clear()
 logo = '''
         ___________
         \         /
@@ -14,32 +13,31 @@ logo = '''
     .-------------.
     /_______________\\
 '''
+print(logo)
 
-bid_list = list()
 person = {}
 
-def auction(name, bid):
-
-    person["name"] = name
-    person["bid"] = bid
-    
-    bid_list.append(person)
-
-while clear = True:
+game = True
+while game:
     print("Welcome to the secret auction program.")
-    name = input('What is your name?: \n')
-    bid = int(input("What's your bid?: $"))
-    auction(name, bid)
+    name = input('What is your name?: \n ')
+    bid = int(input("What's your bid?: \n $"))
+    person[name] = bid
 
     add_person = input("Are there any other bidders? Type 'yes' or 'no'.\n").lower()
+    clear()
 
-    if add_person == 'yes':
-        print(clear)
-    else:
-        # for i in bid_list:
-        bid = person["bid"].max()
+    money = list()
+    if add_person == 'no':
+        for i in person:
+            money.append(person[i])
+            if max(money) == person[i]:
+                winner = max(money)
+                name = i
+        print(f"The winner is '{name}' with a bid of $ {winner} !\n")
+        print(f"{person}\n")
+        game = False
 
-        print(f"The winner is {name} with a bid of ${bid}")
 
 
 
